@@ -512,14 +512,23 @@
             // 
             // buttonUpdate
             // 
-            buttonUpdate.BackColor = SystemColors.InactiveCaption;
-            buttonUpdate.Location = new Point(695, 168);
-            buttonUpdate.Name = "buttonUpdate";
-            buttonUpdate.Size = new Size(112, 34);
-            buttonUpdate.TabIndex = 21;
-            buttonUpdate.Text = "Update";
-            buttonUpdate.UseVisualStyleBackColor = false;
-            buttonUpdate.Click += buttonUpdate_Click;
+            try
+            {
+                buttonUpdate.BackColor = SystemColors.InactiveCaption;
+                buttonUpdate.Location = new Point(695, 168);
+                buttonUpdate.Name = "buttonUpdate";
+                buttonUpdate.Size = new Size(112, 34);
+                buttonUpdate.TabIndex = 21;
+                buttonUpdate.Text = "Update";
+                buttonUpdate.UseVisualStyleBackColor = false;
+                buttonUpdate.Click += buttonUpdate_Click;
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions gracefully, e.g., log the error or display a message to the user
+                Console.WriteLine("An error occurred while configuring the button: " + ex.Message);
+            }
+
             // 
             // buttonDelete
             // 
